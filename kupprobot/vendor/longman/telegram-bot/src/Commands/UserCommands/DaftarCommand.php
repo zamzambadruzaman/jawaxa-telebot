@@ -26,7 +26,7 @@ class DaftarCommand extends UserCommand
      * {@inheritdoc}
      */
     protected $name = 'daftar';
-    protected $description = 'Daftar anggota Persis';
+    protected $description = 'Mendaftar menjadi anggota KUPP';
     protected $usage = '/daftar';
     protected $version = '0.2.0';
     protected $need_mysql = true;
@@ -61,7 +61,7 @@ class DaftarCommand extends UserCommand
             //$data['reply_to_message_id'] = $message_id;
             //Force reply is applied by default to so can work with privacy on
             //$data['reply_markup'] = new ForceReply([ 'selective' => true]);
-            $data['text'] = 'Perintah ini hanya untuk Private chat, silahkan daftar langsung secara personal ke @persisrobot';
+            $data['text'] = 'Perintah ini hanya untuk Private chat, silahkan daftar langsung secara personal ke Moderator @kuppbot';
             $result = Request::sendMessage($data) ;
             
         } else {

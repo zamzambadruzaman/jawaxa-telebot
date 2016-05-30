@@ -23,7 +23,7 @@ class TanggalCommand extends UserCommand
      * {@inheritdoc}
      */
     protected $name = 'tanggal';
-    protected $description = 'Show date/time by location';
+    protected $description = 'Menampilkan tanggal dan waktu saat ini berdasarkan lokasi';
     protected $usage = '/tanggal <location>';
     protected $version = '1.2.1';
     protected $public = true;

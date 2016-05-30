@@ -39,7 +39,7 @@ class NewchatmemberCommand extends SystemCommand
         if ($message->botAddedInChat()) {
             $text = 'Hi there!';
         } else {
-            $text = 'Hi ' . $member->tryMention() . '!';
+            $text = 'Ahlan wa sahlan ' . $member->tryMention() . '!';
         }
 
         $data = [

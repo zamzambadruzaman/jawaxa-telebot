@@ -61,7 +61,7 @@ class DaftarCommand extends UserCommand
             //$data['reply_to_message_id'] = $message_id;
             //Force reply is applied by default to so can work with privacy on
             //$data['reply_markup'] = new ForceReply([ 'selective' => true]);
-            $data['text'] = 'Perintah ini hanya untuk Private chat, silahkan daftar langsung secara personal ke Moderator @kuppbot';
+            $data['text'] = 'Perintah ini hanya untuk Private chat, silahkan register langsung secara personal ke @pemudapersis_bot';
             $result = Request::sendMessage($data) ;
             
         } else {
@@ -109,50 +109,64 @@ class DaftarCommand extends UserCommand
 
                 // no break
             case 2:
-                if (empty($text) || !is_numeric($text)) {
+                if (empty($text)) {
                     $this->conversation->notes['state'] = 2;
                     $this->conversation->update();
 
-                    $data['text'] = 'Umur :';
-                    if (!empty($text) && !is_numeric($text)) {
-                        $data['text'] = 'Umur harus berupa angka';
-                    }
+                    $data['text'] = 'Nama PJ  :';
+                    
                     $result = Request::sendMessage($data);
                     break;
                 }
-                $this->conversation->notes['TTL'] = $text;
+                $this->conversation->notes['PJ'] = $text;
                 $text = '';
 
                 // no break
             case 3:
-                if (empty($text) || !($text == 'L' || $text == 'P')) {
+                if (empty($text) ) {
                     $this->conversation->notes['state'] = 3;
                     $this->conversation->update();
 
-                    $keyboard = [['L','P']];
-                    $reply_keyboard_markup = new ReplyKeyboardMarkup(
-                        [
-                            'keyboard' => $keyboard ,
-                            'resize_keyboard' => true,
-                            'one_time_keyboard' => true,
-                            'selective' => true
-                        ]
-                    );
-                    $data['reply_markup'] = $reply_keyboard_markup;
-                    $data['text'] = 'Jenis kelamin:';
-                    if (!empty($text) && !($text == 'L' || $text == 'P')) {
-                        $data['text'] = 'Tentukan jenis kelamin anda, silahkan tekan tombol sesuai pilihan:';
-                    }
+                    $data['text'] = 'Nama PC  :';
+                    
                     $result = Request::sendMessage($data);
                     break;
                 }
-                $this->conversation->notes['gender'] = $text;
+                $this->conversation->notes['PC'] = $text;
                 $text = '';
-           
+
                 // no break
             case 4:
-                if (empty($text)) {
+                if (empty($text) ) {
                     $this->conversation->notes['state'] = 4;
+                    $this->conversation->update();
+
+                    $data['text'] = 'Nama PD  :';
+                    
+                    $result = Request::sendMessage($data);
+                    break;
+                }
+                $this->conversation->notes['PD'] = $text;
+                $text = '';
+
+                // no break
+            case 5:
+                if (empty($text) ) {
+                    $this->conversation->notes['state'] = 5;
+                    $this->conversation->update();
+
+                    $data['text'] = 'Nama PW  :';
+                    
+                    $result = Request::sendMessage($data);
+                    break;
+                }
+                $this->conversation->notes['PW'] = $text;
+                $text = '';
+
+                // no break
+            case 6:
+                if (empty($text)) {
+                    $this->conversation->notes['state'] = 6;
                     $this->conversation->update();
     
                     $data['text'] = 'Alamat :';
@@ -164,9 +178,9 @@ class DaftarCommand extends UserCommand
                 $text = '';
                 
                 // no break
-            case 5:
+            case 7:
                 if (is_null($message->getContact())) {
-                    $this->conversation->notes['state'] = 5;
+                    $this->conversation->notes['state'] = 7;
                     $this->conversation->update();
 
                     $data['text'] = 'Bagikan kontak anda :';
@@ -184,9 +198,9 @@ class DaftarCommand extends UserCommand
                 $this->conversation->notes['No.Telepon'] = $message->getContact()->getPhoneNumber();
 
                 // no break
-            case 6:
+            case 8:
                 if (is_null($message->getPhoto())) {
-                    $this->conversation->notes['state'] = 6;
+                    $this->conversation->notes['state'] = 8;
                     $this->conversation->update();
 
                     $data['text'] = 'Masukan Photo anda:';
@@ -198,12 +212,14 @@ class DaftarCommand extends UserCommand
 
                 // no break
             
-            case 7:
+            case 9:
                 $this->conversation->update();
-                $out_text = 'Pendaftaran selesai :' . "\n";
+                $out_text = 'Syukron, Registrasi selesai :' . "\n";
                 unset($this->conversation->notes['state']);
                 foreach ($this->conversation->notes as $k => $v) {
+                    if ($k != 'photo_id'){
                     $out_text .= "\n" . ucfirst($k).': ' . $v;
+                    }
                 }
 
                 $data['photo'] = $this->conversation->notes['photo_id'];

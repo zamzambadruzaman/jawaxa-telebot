@@ -47,6 +47,7 @@ class BantuanCommand extends UserCommand
         if ($command === '') {
             $text = $this->telegram->getBotName() . ' v. ' . $this->telegram->getVersion() . "\n\n";
             $text .= 'Daftar Perintah:' . "\n";
+            ksort($commands);
             foreach ($commands as $command) {
                 $text .= '/' . $command->getName() . ' - ' . $command->getDescription() . "\n";
             }

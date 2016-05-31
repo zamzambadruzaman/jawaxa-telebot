@@ -15,9 +15,9 @@ $BOT_NAME = 'kupp_bot';
 //$commands_path = __DIR__ . '/Commands/';
 $mysql_credentials = [
    'host'     => 'localhost',
-   'user'     => 'alakazam',
-   'password' => 'bismillah87',
-   'database' => 'kuppdb',
+   'user'     => 'kuppbot',
+   'password' => 'kuppbot',
+   'database' => 'kuppbot',
 ];
 while(true){
 	

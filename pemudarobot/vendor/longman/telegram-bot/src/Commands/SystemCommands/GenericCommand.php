@@ -44,7 +44,7 @@ class GenericCommand extends SystemCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => 'Afwan, Perintah /' . $command . ' tidak ditemukan, ketik /help untuk melihat perintah yang tersedia.',
+            'text'    => 'Afwan, Perintah /' . $command . ' tidak ditemukan, ketik /bantuan untuk melihat perintah yang tersedia.',
         ];
 
         return Request::sendMessage($data);

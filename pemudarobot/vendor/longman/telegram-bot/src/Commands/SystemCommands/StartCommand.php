@@ -35,7 +35,17 @@ class StartCommand extends SystemCommand
         $message = $this->getMessage();
 
         $chat_id = $message->getChat()->getId();
-        $text = 'Ahlan wa sahlan !' . "\n" . 'Ketik /help untuk melihat semua perintah!';
+        $text = 'Ahlan wa sahlan !' . "\n" . 
+        'UNTUK MELAKUKAN PENDAFTARAN ATAU HER-REGISTRASI SECARA ONLINE FOKUS pada yang memiliki nomor NPA, baik kartunya masih berlaku, kadaluarsa ataupun hilang
+
+Sebelum melakukan input, persiapkan data :
+1⃣KTP (Alamat)
+2⃣KTA (NMR NPA)
+3⃣Alamat email aktif
+4⃣Nomor HP 
+5⃣File Foto
+
+Ketik /bantuan untuk melihat semua perintah.';
 
         $data = [
             'chat_id' => $chat_id,

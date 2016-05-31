@@ -22,7 +22,7 @@ class TatibCommand extends UserCommand
      * {@inheritdoc}
      */
     protected $name = 'tatib';
-    protected $description = 'Menampilkan tata tertib group KUPP';
+    protected $description = 'Menampilkan tata tertib Registrasi Anggota Pemuda Persis';
     protected $usage = '/tatib';
     protected $version = '1.0.1';
     /**#@-*/
@@ -44,62 +44,14 @@ class TatibCommand extends UserCommand
         
         $text = 'Assalamualaikum '.$sender . ', 
 
-9 Syaban 1437H/ 16-05-2016
+UNTUK MELAKUKAN PENDAFTARAN ATAU HER-REGISTRASI SECARA ONLINE FOKUS pada yang memiliki nomor NPA, baik kartunya masih berlaku, kadaluarsa ataupun hilang
 
-📢📢📢TATA TERTIB📢📢📢
-
-1⃣Gambar DP Group
-Harus ada logo Pemuda PERSIS dan disetujui oleh Bidgar terkait dan disahkan Ketum PP
-Yg akan menjadi pokok dari Gambar DP Group kedepan, apapun ruang, forum, ataupun kelas
-
-Perubahan akan disesuaikan setelah disepakati dan disetujui Ketum PP. Pemuda PERSIS
-⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️
-
-2⃣Barang dagangan✅
-Batasan barang yg diperjual belikan
-Barang halal, tidak mengandung hal subhat, tidak bertentangan dengan Al Quran dan Sunnah, sebagai acuan adalah keputusan Dewan Hisbah
-
-🏧🏧🏧🏧🏧🏧🏧🏧🏧🏧🏧
-3⃣Infaq dan zakat ♻️
-Anggota diharapkan memberikan infaq dan zakat atas keuntungan yang diperolehnya
-Besaran infaq, seikhlasnyq
-Besaran Zakat, disesuaikan
-
-Pengelola akan membantu mempromosikan barang dagangan anggota yang berinfaq dan berzakat di komunitas ini
-
-💳Rek. Bank Muamalat 
-Cab. Bandung 
-No. REK : 0116556046 
-a.n. Isamail Fajar Romdhon QQ PP Pemuda Persis
-
-Pengelola : Ismail Fajar
-Tasykil PP : BENDAHARA
-
-🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐
-4⃣Member Komunitas ✅
-PERSIS, Otonom, dan Simpatisan
-
-Ketentuan bagi anggota yang bergabung :
-
-1. Anggota PERSIS & OTONOM
-
-Menuliskan nama
-Nomor hp
-Nomor Keanggotaan atau 
-Menyampaikan dari PC/PD/PW mana, jika Kartu Keanggotaannya dalam proses
-
-Simpatisan :
-Menuliskan nama
-Nomor hp
-
-Tambahan :
-Menyebutkan nama ketua PC atau 
-Salah satu Tasykil PC atau 
-Ketua jamaah didaerahnya atau 
-Nama asatidz PERSIS yg dikenalnya atau 
-Keterangan lain sebagai referensi dirinya adalah simpatisan
-
-Perubahan akan diedit sesuai usulan yang disetujui Pengelola';
+Sebelum melakukan input, persiapkan data :
+1⃣KTP (Alamat)
+2⃣KTA (NMR NPA)
+3⃣Alamat email aktif
+4⃣Nomor HP 
+5⃣File Foto';
         
         $data = [
             'chat_id' => $chat_id,

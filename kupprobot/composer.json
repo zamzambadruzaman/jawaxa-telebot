@@ -1,8 +1,0 @@
-{
-    "name": "telebot/persisrobot",
-    "type": "robot",
-    "require": {
-        "php": ">=5.5.0",
-        "longman/telegram-bot": "*"
-    }
-}
